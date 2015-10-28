@@ -1,0 +1,4 @@
+Airead	90	100
+Fan	89	90
+Li	30	60
+Ning	23	60
