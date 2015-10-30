@@ -1,10 +1,6 @@
 package com.aireadfun.exercise.e1;
 
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
-
-import java.util.Arrays;
 
 /**
  * Created by airead on 15/10/28.
@@ -56,6 +52,17 @@ public class e1_1_29 {
         return lo;
     }
 
+    public static int count(int[] a, int key) {
+        int r = rank(a, key);
+        int count = 0;
+        while (r < a.length && a[r] == key) {
+            r++;
+            count++;
+        }
+
+        return count;
+    }
+
     /**
      * Reads in a sequence of integers from the whitelist file, specified as
      * a command-line argument; reads in integers from standard input;
@@ -69,6 +76,11 @@ public class e1_1_29 {
         StdOut.printf("%d rank: %d\n", 3, rank(arr, 3)); // 5
         StdOut.printf("%d rank: %d\n", 4, rank(arr, 4)); // 6
         StdOut.printf("%d rank: %d\n", 5, rank(arr, 5)); // 8
+
+        StdOut.printf("%d count: %d\n", 2, count(arr, 2)); // 4
+        StdOut.printf("%d count: %d\n", 3, count(arr, 3)); // 0
+        StdOut.printf("%d count: %d\n", 4, count(arr, 4)); // 3
+        StdOut.printf("%d count: %d\n", 5, count(arr, 5)); // 0
     }
 
 }
